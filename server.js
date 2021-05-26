@@ -1,1 +1,10 @@
 const express = require('express');
+const serveStatic = require('serve-static');
+const app = express();
+
+app.use(express.static(__dirname + '/dist'));
+const port = process.env.PORT || 5000;
+
+app.listen(port, ()=>{
+    console.log(`Currently running on port ${port}`);
+})
