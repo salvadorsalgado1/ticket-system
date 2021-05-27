@@ -17,6 +17,7 @@
 import Introduction from '../components/Introduction'
 import IntroVideo from '../components/IntroVideo'
 export default {
+  name:'Landing',
 components:{Introduction, IntroVideo}
 }
 </script>

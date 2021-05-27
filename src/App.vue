@@ -1,10 +1,28 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="mt-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div v-if="this.$route.name !== 'Landing'" class=" col-md-3 col-lg-2 col-sm-5 col-xs-12">
+          <img class="img-fluid img-logo" src="@/assets/logos/logo_transparent.png" alt="" />
+          <ListNav/>
+        </div> 
+        <div class="col">
+          <router-view/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
-
+<script>
+import ListNav from './components/ListNav'
+export default {
+components:{ListNav}
+}
+</script>
 <style>
+.img-logo{
+  width:70%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +31,7 @@
   color: #2c3e50;
 }
 body{
-   background: url('./assets/backgrounds/forest.jpg') no-repeat center center fixed; 
+   background: url('./assets/backgrounds/forest-1.jpg') no-repeat center center fixed; 
  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,7 +47,18 @@ body{
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.h1-heading{
+  font-size:2em;
 }
+
+.h2-heading{
+  font-size:1.8em;
+}
+
+.h1-heading-white, .h2-heading-white{
+  color:white;
+  
+}
+
+ 
 </style>
