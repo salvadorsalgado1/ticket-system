@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Landing from '../views/Landing.vue'
+import Employee from '../views/Employee.vue'
+import Tasks from '../views/Tasks.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +16,19 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
+    
+  },
+  {
+    path: '/create-employee',
+    name: 'Employee',
+    component: Employee
+    
+  },
+  {
+    path: '/tasks',
+    name: 'Tasks',
+    component: Tasks
+    
   },
   {
     path: '/about',

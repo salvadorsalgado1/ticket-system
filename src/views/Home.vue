@@ -1,30 +1,30 @@
 <template>
   <div class="home">
     <div class="container">
-      <div class="card">
-       <div class="card-body">
-         <div class="row">
-           <div class="col">
-             <CreateTask/>
-           </div>
-           <div class="col">
-             <h2>The</h2>
-           </div>
-         </div>
-          
-       </div>
-     </div>
+      <div class="row mb-4">
+        <div class="col">
+          <Statistics/>
+        </div>
+        <div class="col">
+          <EmployeeList/>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col">
+            <TotalTickets/>
+          </div>
+        </div>
     </div>
-     
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
- 
 import CreateTask from '../components/CreateTask'
+import TotalTickets from '../components/TotalTickets'
+import Statistics from '../components/Statistics'
+import EmployeeList from '../components/EmployeeList'
 export default {
-  components:{CreateTask},
+  components:{CreateTask, TotalTickets, Statistics, EmployeeList},
   name: 'Home',
   
 }
