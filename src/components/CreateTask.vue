@@ -86,7 +86,11 @@ methods:{
         assigned:this.assigned,
         description:this.description
       })
-      
+      this.taskTitle = null;
+      this.urgency = null;
+      this.assigned = null;
+      this.description = null;
+
       console.log(this.taskTitle, this.assigned, id, this.description); 
 
       

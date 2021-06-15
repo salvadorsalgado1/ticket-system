@@ -1,37 +1,38 @@
 <template>
   <div class="employee-list">
-      <div v-for="(user, id) in this.users" :key="id" class="card mb-1">
-          <div class="card-body">
-                <div class="row">
-                    <div class="col"><img class="rounded img-users" :src='"@/assets/icons/" + user.positionImg + ".jpg"'/>
-                    <br/>{{user.user_id}}</div>
-                    <div class="col"><p class="name-position">  {{user.firstName}} <br/><em>{{user.position}}</em></p></div>
+    <div class="overlfow-auto  ">
+        <div v-for="(user, id) in getUsers" :key="id" class="card mb-3 col-3" style="max-width: 50%;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img class="img-userss mt-2 w-100 p-3 " :src='"@/assets/icons/" + user.positionImg + ".jpg"' alt="...">
                 </div>
-          </div>
-      </div>
+                <div class="col-md-8">
+                    <div class="card-body">             
+                        <p class="card-text name-position">{{user.user_id}} </p>
+                        <p class="card-text "><small class="text-muted">{{user.position}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 <script>
-import axios from 'axios'
-export default {
+ export default {
     data(){
         return{
             users:null,
-            
-
         }
     },
     mounted(){
-        axios.get('http://localhost:5000/api/users/')
-        .then(response=>{
-        console.log(response.data);
-        this.users = response.data;
-        
-      })
       
+      this.$store.dispatch('getUsers');
     },
     computed:{
-         
+        getUsers(){
+            let users = this.$store.state.users;
+            return users;
+        }
     }
 }
 </script>
@@ -41,12 +42,13 @@ export default {
     font-size:1.4em;
 }
 .employee-list{
-    overflow-y: scroll;
-    height:15em;
+     
+    
     color:gray;
 }
 .img-users{
-    width:35%;
+   width:50%;
+    
 }
  
 </style>

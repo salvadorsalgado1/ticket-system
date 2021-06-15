@@ -5,12 +5,16 @@ Vue.use(Vuex)
 import axios from 'axios'
 export default new Vuex.Store({
   state: {
-    users:null,
+    users:[],
+    tasks:[]
     
   },
   mutations: {
     getUsers(state, payload){
-      state.users = payload
+      state.users = payload;
+    },
+    getTasks(state, payload){
+      state.tasks = payload;
     }
   },
   actions: {
@@ -18,6 +22,12 @@ export default new Vuex.Store({
       axios.get('http://localhost:5000/api/users')
       .then(response=>{
         commit('getUsers', response.data);
+      })
+    },
+    getTasks({commit}){
+      axios.get('http://localhost:5000/api/tasks')
+      .then(response=>{
+        commit('getTasks', response.data);
       })
     }
     

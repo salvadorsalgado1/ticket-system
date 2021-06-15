@@ -11,7 +11,7 @@
           <label for="formGroupExampleInput2">Position</label>
           <select class="form-select" aria-label="Default select example" v-model="position">
             <option selected>Open this select menu</option>
-            <option value="Senior Developer">Chief</option>
+            <option value="Senior">Senior Developer</option>
             <option value="Designer">Designer</option>
             <option value="Developer">Developer</option>
             <option value="Intern">Intern</option>

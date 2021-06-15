@@ -5,14 +5,17 @@
         <div class="col">
           <Statistics/>
         </div>
-        <div class="col">
-          <EmployeeList/>
-        </div>
+        
       </div>
         <div class="row">
           <div class="col">
             <TotalTickets/>
           </div>
+        </div>
+        <div class="row">
+          <div class="col">
+          <EmployeeList/>
+        </div>
         </div>
     </div>
   </div>
