@@ -2,12 +2,11 @@
   <div class="quick-links mb-4">
       <div class="container">
           <div class="row">
-            <router-link class="btn btn-primary mt-4" :to="{name:'Employee'}">Create an Employee</router-link>
-            <router-link class="btn btn-primary mt-4" :to="{name:'Tasks'}">Create a Task</router-link> 
+            <h2 class="h2-heading-white">Quick Links</h2>
+            <router-link class="btn btn-primary mt-3" :to="{name:'Employee'}">Create an Employee</router-link>
+            <router-link class="btn btn-primary mt-3" :to="{name:'Tasks'}">Create a Task</router-link> 
           </div>
       </div>
-    
-
   </div>
 </template>
 

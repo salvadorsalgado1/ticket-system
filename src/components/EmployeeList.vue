@@ -1,21 +1,33 @@
 <template>
-  <div class="employee-list">
-    <div class="overlfow-auto  ">
-        <div v-for="(user, id) in getUsers" :key="id" class="card mb-3 col-3" style="max-width: 50%;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img class="img-userss mt-2 w-100 p-3 " :src='"@/assets/icons/" + user.positionImg + ".jpg"' alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">             
-                        <p class="card-text name-position">{{user.user_id}} </p>
-                        <p class="card-text "><small class="text-muted">{{user.position}}</small></p>
-                    </div>
-                </div>
+    <div class="employee-list mt-3">
+         
+        <div class="card">
+            <div class="card-header">
+                Users
             </div>
+            <div class="card-body">
+                <table class="table table-bordered  ">
+            <thead>
+                <tr class="table-secondary">
+                    <th>Role</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(user, id) in getUsers" :key="id">
+                    <td><img class="img-users mt-2" :src='"@/assets/icons/" + user.positionImg + ".jpg"' alt=""></td>
+                    <td>{{user.firstName}}</td>
+                    <td><small class="text-muted">{{user.position}}</small> </td>
+                    <td>{{user.user_id}}  </td>
+                </tr>
+            </tbody>
+        </table>
+            </div>
+            
         </div>
     </div>
-  </div>
 </template>
 <script>
  export default {
@@ -25,8 +37,8 @@
         }
     },
     mounted(){
-      
-      this.$store.dispatch('getUsers');
+    
+    this.$store.dispatch('getUsers');
     },
     computed:{
         getUsers(){
@@ -46,8 +58,14 @@
     
     color:gray;
 }
+  .list-group-users{
+     color:red;
+ }
+
 .img-users{
-   width:50%;
+   height:5em;
+ 
+  
     
 }
  

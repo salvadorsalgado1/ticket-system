@@ -20,11 +20,8 @@
           <label for="formGroupExampleInput2">Assigned to:</label>
          <select class="form-select" aria-label="Default select example" v-model="assigned">
           <option selected>Open this select menu</option>
-            <option v-for="(user, index) in getUsers" 
-            :key="index" :value="user.user_id">{{user.firstName}}</option>
-             
-       <!--   <option value="valerie">Valerie</option>
-          <option value="veronica">Veronica</option>-->
+          <option v-for="(user, index) in getUsers" 
+            :key="index" :value="user.user_id">{{user.firstName}}</option> 
         </select>
         </div>
         <div class="form-group mt-3">

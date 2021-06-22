@@ -2,14 +2,12 @@
   <div id="app" class="mt-3">
     <div class="container-fluid">
       <div class="row">
-        <div v-if="this.$route.name !== 'Landing'" class=" col-md-3 col-lg-2 col-sm-5 col-xs-12">
+        <div v-if="this.$route.name !== 'Landing'" class=" col-md-4 col-sm-12 mb-4">
           <h1 class="route-name-heading">{{getRouteName}}</h1>
           <img class="img-fluid img-logo" src="@/assets/logos/logo_transparent.png" alt="" />
           <ListNav/>
-          <QuickLinks/>
-        </div> 
-        
-        <div class="col">
+        </div>
+        <div class="col-md-8 col-sm-12">
           <router-view/>
         </div>
       </div>
@@ -18,19 +16,19 @@
 </template>
 <script>
 import ListNav from './components/ListNav'
-import QuickLinks from './components/QuickLinks'
-export default {
-components:{ListNav, QuickLinks},
+ export default {
+components:{ListNav },
 computed:{
   getRouteName(){
-    return this.$route.name;
+    let name = this.$route.name;
+    return name;
   }
 }
 }
 </script>
 <style>
 .img-logo{
-  width:70%;
+  width:50%;
 }
 .route-name-heading{
   font-size:1.4em;
